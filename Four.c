@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdint.h>
 int main(){
-    //thousand multiplies
+    //million multiplies
     LARGE_INTEGER freq, start, end;
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);  
@@ -14,7 +14,7 @@ int main(){
     QueryPerformanceCounter(&end);
     double elapsed = (double)((end.QuadPart - start.QuadPart) / (double)freq.QuadPart);
     printf("avg time mult: %f / 10^6 avg s val: %llu\n", elapsed, a);
-    //thousand divides
+    //million square roots
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start);  
     volatile double b = 0xFFFFFFFFFFFFFFFF;
@@ -24,7 +24,7 @@ int main(){
     QueryPerformanceCounter(&end);
     elapsed = (double)((end.QuadPart - start.QuadPart) / (double)freq.QuadPart);
     printf("avg time div: %f / 10^6 avg s val: %f\n", elapsed, b);
-    //thousand square roots
+    //million square roots
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start); 
     volatile double c = 0xFFFFFFFFFFFFFFFF;
@@ -34,7 +34,7 @@ int main(){
     QueryPerformanceCounter(&end);
     elapsed = (double)((end.QuadPart - start.QuadPart) / (double)freq.QuadPart);
     printf("avg time sqrt: %f / 10^6 avg s val: %f\n", elapsed, c);
-    //thousand sines
+    //million sines
     QueryPerformanceFrequency(&freq);
     QueryPerformanceCounter(&start); 
     volatile double d = 0xFFFFFFFFFFFFFFFF;
